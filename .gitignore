@@ -1,0 +1,74 @@
+#####
+
+# Locraft
+.locraft_gdrive_token
+google_doc_sheet.csv
+
+# OS X temporary files that should never be committed
+.DS_Store
+.Trashes
+*.swp
+*~.nib
+
+#####
+# Fastlane
+report.xml
+fastlane/test_output/
+
+#####
+# CocoaPods
+Pods/
+!Podfile.lock
+
+######
+# realm
+*.realm.lock
+*.realm.management/
+
+#####
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+build/
+
+# NB: also, whitelist the default ones, some projects need to use these
+
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+# Xcode 4 - semi-personal settings
+.xccheckout
+xcuserdata/
+
+# Xcode 4 - Deprecated classes
+*.moved-aside
+
+#####
+# RUBY:
+!Gemfile.lock
+
+#####
+# IDEA:
+.idea
+
+#####
+# TEXTMATE:
+tm_build_errors
+
+#####
+# Carthage:
+Carthage
+/CartManifest.resolved
+
+*.ipa
+*.app.dSYM.zip
+
+.bundle
