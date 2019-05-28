@@ -31,5 +31,16 @@ final class CompositePipe: SKNode {
         
         addChild(lowwer)
         lowwer.position = CGPoint(x: size.width / 2, y: lowwerHeight / 2)
+        
+        setupScore()
+    }
+    
+    private func setupScore() {
+        let score = SKNode()
+        score.position = CGPoint(x: size.width + Bird.preferredSize.width, y: size.height / 2)
+        score.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 1, height: size.height))
+        score.physicsBody?.isDynamic = false
+        score.physicsBody?.categoryBitMask = CollisionCategory.score.rawValue
+        addChild(score)
     }
 }

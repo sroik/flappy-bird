@@ -10,6 +10,8 @@ struct CollisionCategory: OptionSet {
     static let bird = CollisionCategory(rawValue: 1 << 0)
     static let ground = CollisionCategory(rawValue: 1 << 1)
     static let pipe =  CollisionCategory(rawValue: 1 << 2)
+    static let score =  CollisionCategory(rawValue: 1 << 3)
     
-    static let groundPipe: CollisionCategory = [.ground, .pipe]
+    static let birdCollision: CollisionCategory = [.ground, .pipe]
+    static let birdContact: CollisionCategory = [.ground, .pipe, .score]
 }

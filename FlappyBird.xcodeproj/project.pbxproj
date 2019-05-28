@@ -22,6 +22,7 @@
 		ACA9EF16229C321700AD4991 /* CGGeometry+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF15229C321700AD4991 /* CGGeometry+Extensions.swift */; };
 		ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */; };
 		ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */; };
+		ACAC34BF229D8B6500914364 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC34BE229D8B6500914364 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		ACA9EF15229C321700AD4991 /* CGGeometry+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGGeometry+Extensions.swift"; sourceTree = "<group>"; };
 		ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Factory.swift"; sourceTree = "<group>"; };
+		ACAC34BE229D8B6500914364 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,9 @@
 		AC4B9559229D0DF3002100B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC4B9551229D0850002100B1 /* BirdAction.swift */,
 				ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */,
+				AC4B9551229D0850002100B1 /* BirdAction.swift */,
+				ACAC34BE229D8B6500914364 /* GameState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */,
 				AC4B9558229D0DA7002100B1 /* PipeSpawner.swift in Sources */,
 				AC43890F229C169D0007936D /* GameViewController.swift in Sources */,
+				ACAC34BF229D8B6500914364 /* GameState.swift in Sources */,
 				ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */,
 				AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */,
 				AC438907229C169D0007936D /* AppDelegate.swift in Sources */,

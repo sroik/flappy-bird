@@ -28,9 +28,18 @@ final class PipeSpawner: SKNode {
         removeAllChildren()
     }
     
+    func pause() {
+        speed = 0
+    }
+    
+    func unpause() {
+        speed = 1
+    }
+    
     func start(in space: CGRect) {
         self.space = space
         stop()
+        unpause()
 
         let spawn = SKAction.run(spawnPipe)
         let wait = SKAction.wait(forDuration: idle)

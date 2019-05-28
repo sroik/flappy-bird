@@ -27,7 +27,7 @@ final class Bird: SKShapeNode {
     
     private func jump() {
         physicsBody?.velocity = .zero
-        physicsBody?.applyImpulse(CGVector(dx: 0, dy: 45))
+        physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
     }
     
     private func setup() {
@@ -45,8 +45,8 @@ final class Bird: SKShapeNode {
         physicsBody?.affectedByGravity = true
         physicsBody?.allowsRotation = false
         physicsBody?.categoryBitMask = CollisionCategory.bird.rawValue
-        physicsBody?.collisionBitMask = CollisionCategory.groundPipe.rawValue
-        physicsBody?.contactTestBitMask = CollisionCategory.groundPipe.rawValue
+        physicsBody?.collisionBitMask = CollisionCategory.birdCollision.rawValue
+        physicsBody?.contactTestBitMask = CollisionCategory.birdContact.rawValue
     }
 
     private let size: CGSize
