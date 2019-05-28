@@ -6,7 +6,7 @@ import SpriteKit
 
 final class Bird: SKShapeNode {
     
-    static let preferredSize = CGSize(width: 20, height: 20)
+    static let preferredSize = CGSize(width: 30, height: 30)
     
     init(size: CGSize = Bird.preferredSize) {
         self.size = size
@@ -18,23 +18,35 @@ final class Bird: SKShapeNode {
         self.init()
     }
     
-    func jump() {
+    func perform(action: BirdAction) {
+        switch action {
+        case .jump: jump()
+        default: break
+        }
+    }
+    
+    private func jump() {
         physicsBody?.velocity = .zero
-        physicsBody?.applyImpulse(CGVector(dx: 0, dy: 5))
+        physicsBody?.applyImpulse(CGVector(dx: 0, dy: 45))
     }
     
     private func setup() {
         path = CGPath(rect: CGRect(center: .zero, size: size), transform: nil)
-        fillColor = .black
-        strokeColor = .black
-        
+        blendMode = .replace
+        fillColor = .sun
+        strokeColor = .clear
         setupPhysics()
     }
     
     private func setupPhysics() {
         physicsBody = SKPhysicsBody(rectangleOf: size)
+        physicsBody?.mass = 0.1
         physicsBody?.isDynamic = true
         physicsBody?.affectedByGravity = true
+        physicsBody?.allowsRotation = false
+        physicsBody?.categoryBitMask = CollisionCategory.bird.rawValue
+        physicsBody?.collisionBitMask = CollisionCategory.groundPipe.rawValue
+        physicsBody?.contactTestBitMask = CollisionCategory.groundPipe.rawValue
     }
 
     private let size: CGSize

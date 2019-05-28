@@ -8,12 +8,14 @@ extension CGFloat {
     static let earthGravity: CGFloat = 9.807
     static let moonGravity: CGFloat = 1.62
     static let marsGravity: CGFloat = 3.711
+    static let flappyGravity: CGFloat = 5.0
 }
 
 extension CGVector {
     static let earthGravity = CGVector(dx: 0.0, dy: -.earthGravity)
     static let moonGravity = CGVector(dx: 0.0, dy: -.moonGravity)
     static let marsGravity = CGVector(dx: 0.0, dy: -.marsGravity)
+    static let flappyGravity = CGVector(dx: 0.0, dy: -.flappyGravity)
 }
 
 extension CGSize {

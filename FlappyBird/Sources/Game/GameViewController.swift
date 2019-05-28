@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
         gameScene.size = view.bounds.size
         
         view.addSubview(sceneView)
+        sceneView.ignoresSiblingOrder = true
         sceneView.showsFPS = true
         sceneView.showsDrawCount = true
         sceneView.showsNodeCount = true

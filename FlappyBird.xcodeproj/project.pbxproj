@@ -11,6 +11,11 @@
 		AC43890D229C169D0007936D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43890C229C169D0007936D /* GameScene.swift */; };
 		AC43890F229C169D0007936D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43890E229C169D0007936D /* GameViewController.swift */; };
 		AC438914229C169F0007936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC438913229C169F0007936D /* Assets.xcassets */; };
+		AC4B954E229D04D6002100B1 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B954D229D04D6002100B1 /* Floor.swift */; };
+		AC4B9552229D0850002100B1 /* BirdAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9551229D0850002100B1 /* BirdAction.swift */; };
+		AC4B9554229D09B6002100B1 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9553229D09B6002100B1 /* Pipe.swift */; };
+		AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9555229D0BC8002100B1 /* CompositePipe.swift */; };
+		AC4B9558229D0DA7002100B1 /* PipeSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9557229D0DA7002100B1 /* PipeSpawner.swift */; };
 		ACA9EF0F229C263500AD4991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA9EF0E229C263500AD4991 /* LaunchScreen.storyboard */; };
 		ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF11229C30CA00AD4991 /* Bird.swift */; };
 		ACA9EF14229C316400AD4991 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF13229C316400AD4991 /* Device.swift */; };
@@ -26,6 +31,11 @@
 		AC43890E229C169D0007936D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AC438913229C169F0007936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC438918229C169F0007936D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC4B954D229D04D6002100B1 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		AC4B9551229D0850002100B1 /* BirdAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdAction.swift; sourceTree = "<group>"; };
+		AC4B9553229D09B6002100B1 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
+		AC4B9555229D0BC8002100B1 /* CompositePipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositePipe.swift; sourceTree = "<group>"; };
+		AC4B9557229D0DA7002100B1 /* PipeSpawner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeSpawner.swift; sourceTree = "<group>"; };
 		ACA9EF0E229C263500AD4991 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA9EF11229C30CA00AD4991 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		ACA9EF13229C316400AD4991 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -70,6 +80,38 @@
 			path = FlappyBird;
 			sourceTree = "<group>";
 		};
+		AC4B954F229D04DA002100B1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AC4B9559229D0DF3002100B1 /* Model */,
+				AC4B9550229D04E4002100B1 /* Node */,
+				AC43890E229C169D0007936D /* GameViewController.swift */,
+				AC43890C229C169D0007936D /* GameScene.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		AC4B9550229D04E4002100B1 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				ACA9EF11229C30CA00AD4991 /* Bird.swift */,
+				AC4B954D229D04D6002100B1 /* Floor.swift */,
+				AC4B9553229D09B6002100B1 /* Pipe.swift */,
+				AC4B9555229D0BC8002100B1 /* CompositePipe.swift */,
+				AC4B9557229D0DA7002100B1 /* PipeSpawner.swift */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
+		AC4B9559229D0DF3002100B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC4B9551229D0850002100B1 /* BirdAction.swift */,
+				ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ACA9EF0D229C261500AD4991 /* SupprtingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +125,9 @@
 		ACA9EF10229C26CC00AD4991 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				ACA9EF17229C366300AD4991 /* Utils */,
 				AC438906229C169D0007936D /* AppDelegate.swift */,
-				AC43890E229C169D0007936D /* GameViewController.swift */,
-				AC43890C229C169D0007936D /* GameScene.swift */,
-				ACA9EF11229C30CA00AD4991 /* Bird.swift */,
-				ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */,
+				AC4B954F229D04DA002100B1 /* Game */,
+				ACA9EF17229C366300AD4991 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -173,14 +212,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4B954E229D04D6002100B1 /* Floor.swift in Sources */,
 				ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */,
 				AC43890D229C169D0007936D /* GameScene.swift in Sources */,
 				ACA9EF16229C321700AD4991 /* CGGeometry+Extensions.swift in Sources */,
 				ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */,
+				AC4B9558229D0DA7002100B1 /* PipeSpawner.swift in Sources */,
 				AC43890F229C169D0007936D /* GameViewController.swift in Sources */,
 				ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */,
+				AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */,
 				AC438907229C169D0007936D /* AppDelegate.swift in Sources */,
+				AC4B9552229D0850002100B1 /* BirdAction.swift in Sources */,
 				ACA9EF14229C316400AD4991 /* Device.swift in Sources */,
+				AC4B9554229D09B6002100B1 /* Pipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
