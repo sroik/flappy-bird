@@ -11,7 +11,7 @@ final class QDriver: NSObject {
     init(gameScene: GameScene) {
         self.gameScene = gameScene
         self.env = QEnv(gameScene: gameScene)
-        self.agent = QAgent(q: QTable(), learningRate: 0.1, discount: 0.99)
+        self.agent = QAgent(q: QTable(), learningRate: 0.25, discount: 0.9)
         super.init()
         restoreQTable()
     }
