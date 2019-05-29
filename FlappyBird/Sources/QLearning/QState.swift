@@ -14,7 +14,7 @@ extension QState {
     static let maxState = QState(
         yDistance: 1024,
         xDistance: 1024,
-        stride: 10
+        stride: 5
     )
 
     var xIndex: Int {
