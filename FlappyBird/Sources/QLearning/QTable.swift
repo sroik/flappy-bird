@@ -7,20 +7,18 @@ import Foundation
 struct QTable: Codable {
     /* It can be generic instead of typealias */
     typealias T = Int
-    typealias Grid = [[[[T]]]]
+    typealias Grid = [[[T]]]
 
     var grid: Grid
 
     /**
      yn: y-distance grid size
      xn: x-distance grid size
-     vn: y-velocity grid size
      an: number of actions
      */
-    init(yn: Int, xn: Int, vn: Int, an: Int = BirdAction.count) {
+    init(yn: Int, xn: Int, an: Int = BirdAction.count) {
         let actions = Array(repeating: 0, count: an)
-        let velocities = Array(repeating: actions, count: vn)
-        let xdists = Array(repeating: velocities, count: xn)
+        let xdists = Array(repeating: actions, count: xn)
         let ydists = Array(repeating: xdists, count: yn)
         self.grid = ydists
     }
@@ -29,7 +27,6 @@ struct QTable: Codable {
         self.init(
             yn: maxState.yIndex + 1,
             xn: maxState.xIndex + 1,
-            vn: maxState.vIndex + 1,
             an: an
         )
     }
@@ -40,37 +37,19 @@ struct QTable: Codable {
 
     subscript(state state: QState) -> [T] {
         get {
-            return self[y: state.yIndex, x: state.xIndex, v: state.vIndex]
+            return grid[state.yIndex][state.xIndex]
         }
         set {
-            self[y: state.yIndex, x: state.xIndex, v: state.vIndex] = newValue
+            grid[state.yIndex][state.xIndex] = newValue
         }
     }
 
     subscript(state state: QState, a a: Int) -> T {
         get {
-            return self[y: state.yIndex, x: state.xIndex, v: state.vIndex, a: a]
+            return grid[state.yIndex][state.xIndex][a]
         }
         set {
-            self[y: state.yIndex, x: state.xIndex, v: state.vIndex, a: a] = newValue
-        }
-    }
-
-    subscript(y y: Int, x x: Int, v v: Int) -> [T] {
-        get {
-            return grid[y][x][v]
-        }
-        set {
-            grid[y][x][v] = newValue
-        }
-    }
-
-    subscript(y y: Int, x x: Int, v v: Int, a a: Int) -> T {
-        get {
-            return grid[y][x][v][a]
-        }
-        set {
-            grid[y][x][v][a] = newValue
+            grid[state.yIndex][state.xIndex][a] = newValue
         }
     }
 }

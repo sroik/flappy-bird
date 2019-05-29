@@ -16,7 +16,6 @@ final class QEnv: NSObject {
         }
 
         return QState(
-            velocity: Double(bird.velocity),
             yDistance: Double(bird.frame.minY - closest.lowwer.frame.maxY),
             xDistance: Double(closest.frame.minX - bird.frame.maxX),
             stride: QState.maxState.stride
