@@ -15,11 +15,10 @@ class GameScene: SKScene {
 
         addChild(bird)
         addChild(pipeSpawner)
-        addChild(floor)
 
         setupScoreLabel()
+        setupGround()
         resetBird()
-        resetFloor()
         pause()
     }
 
@@ -41,16 +40,21 @@ class GameScene: SKScene {
     }
 
     private func setupScoreLabel() {
-        scoreLabel.position = CGPoint(x: frame.midX, y: frame.height * 0.85)
+        scoreLabel.position = CGPoint(x: frame.midX, y: frame.height * 0.9)
         scoreLabel.zPosition = 10
-        scoreLabel.fontSize = 40
+        scoreLabel.fontSize = 30
         addChild(scoreLabel)
         updateScore()
     }
 
-    private func resetFloor() {
+    private func setupGround() {
         floor.size = CGSize(width: frame.width, height: frame.height * 0.25)
         floor.position = floor.size.center
+        addChild(floor)
+
+        ceil.size = CGSize(width: frame.width, height: 1)
+        ceil.position = CGPoint(x: frame.midX, y: frame.maxY)
+        addChild(ceil)
     }
 
     private func resetBird() {
@@ -70,8 +74,9 @@ class GameScene: SKScene {
     }
 
     private(set) var state: GameState = .stopped
-    private let floor = Floor()
-    private let scoreLabel = SKLabelNode(fontNamed: "SanFranciscoText-Semibold")
+    private let floor = Ground()
+    private let ceil = Ground()
+    private let scoreLabel = SKLabelNode(fontNamed: "AmericanTypewriter-Bold")
 }
 
 extension GameScene: SKPhysicsContactDelegate {

@@ -11,7 +11,7 @@
 		AC43890D229C169D0007936D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43890C229C169D0007936D /* GameScene.swift */; };
 		AC43890F229C169D0007936D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC43890E229C169D0007936D /* GameViewController.swift */; };
 		AC438914229C169F0007936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC438913229C169F0007936D /* Assets.xcassets */; };
-		AC4B954E229D04D6002100B1 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B954D229D04D6002100B1 /* Floor.swift */; };
+		AC4B954E229D04D6002100B1 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B954D229D04D6002100B1 /* Ground.swift */; };
 		AC4B9552229D0850002100B1 /* BirdAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9551229D0850002100B1 /* BirdAction.swift */; };
 		AC4B9554229D09B6002100B1 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9553229D09B6002100B1 /* Pipe.swift */; };
 		AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B9555229D0BC8002100B1 /* CompositePipe.swift */; };
@@ -27,6 +27,9 @@
 		ACAD29FB229E5F8E00FDB509 /* QAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FA229E5F8E00FDB509 /* QAgent.swift */; };
 		ACAD29FD229E61F100FDB509 /* QState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FC229E61F100FDB509 /* QState.swift */; };
 		ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FE229E62EA00FDB509 /* Math.swift */; };
+		ACAD2A01229E6BC500FDB509 /* QEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A00229E6BC500FDB509 /* QEnv.swift */; };
+		ACAD2A03229E6D3E00FDB509 /* QDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A02229E6D3E00FDB509 /* QDriver.swift */; };
+		ACD4ED4C229E84280034BA57 /* QDriver+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +39,7 @@
 		AC43890E229C169D0007936D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AC438913229C169F0007936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC438918229C169F0007936D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC4B954D229D04D6002100B1 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		AC4B954D229D04D6002100B1 /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		AC4B9551229D0850002100B1 /* BirdAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdAction.swift; sourceTree = "<group>"; };
 		AC4B9553229D09B6002100B1 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
 		AC4B9555229D0BC8002100B1 /* CompositePipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositePipe.swift; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		ACAD29FA229E5F8E00FDB509 /* QAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAgent.swift; sourceTree = "<group>"; };
 		ACAD29FC229E61F100FDB509 /* QState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QState.swift; sourceTree = "<group>"; };
 		ACAD29FE229E62EA00FDB509 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		ACAD2A00229E6BC500FDB509 /* QEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QEnv.swift; sourceTree = "<group>"; };
+		ACAD2A02229E6D3E00FDB509 /* QDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDriver.swift; sourceTree = "<group>"; };
+		ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QDriver+Storage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA9EF11229C30CA00AD4991 /* Bird.swift */,
-				AC4B954D229D04D6002100B1 /* Floor.swift */,
+				AC4B954D229D04D6002100B1 /* Ground.swift */,
 				AC4B9553229D09B6002100B1 /* Pipe.swift */,
 				AC4B9555229D0BC8002100B1 /* CompositePipe.swift */,
 				AC4B9557229D0DA7002100B1 /* PipeSpawner.swift */,
@@ -161,6 +167,9 @@
 				ACAD29F8229E5C1A00FDB509 /* QTable.swift */,
 				ACAD29FA229E5F8E00FDB509 /* QAgent.swift */,
 				ACAD29FC229E61F100FDB509 /* QState.swift */,
+				ACAD2A00229E6BC500FDB509 /* QEnv.swift */,
+				ACAD2A02229E6D3E00FDB509 /* QDriver.swift */,
+				ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */,
 			);
 			path = QLearning;
 			sourceTree = "<group>";
@@ -258,8 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACAD29F9229E5C1A00FDB509 /* QTable.swift in Sources */,
-				AC4B954E229D04D6002100B1 /* Floor.swift in Sources */,
+				ACAD2A03229E6D3E00FDB509 /* QDriver.swift in Sources */,
+				AC4B954E229D04D6002100B1 /* Ground.swift in Sources */,
 				ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */,
+				ACAD2A01229E6BC500FDB509 /* QEnv.swift in Sources */,
 				AC43890D229C169D0007936D /* GameScene.swift in Sources */,
 				ACA9EF16229C321700AD4991 /* CGGeometry+Extensions.swift in Sources */,
 				ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */,
@@ -271,6 +282,7 @@
 				ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */,
 				ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */,
 				AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */,
+				ACD4ED4C229E84280034BA57 /* QDriver+Storage.swift in Sources */,
 				AC438907229C169D0007936D /* AppDelegate.swift in Sources */,
 				AC4B9552229D0850002100B1 /* BirdAction.swift in Sources */,
 				ACA9EF14229C316400AD4991 /* Device.swift in Sources */,
@@ -402,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 9Q262Z5T3C;
+				DEVELOPMENT_TEAM = 92S697UFZB;
 				INFOPLIST_FILE = "$(SRCROOT)/FlappyBird/SupprtingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,7 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sroik.flappybird;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development *";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

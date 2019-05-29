@@ -5,12 +5,18 @@
 import SpriteKit
 
 final class CompositePipe: SKNode {
-    let gap: CGFloat
     let size: CGSize
+    let upper: Pipe
+    let lowwer: Pipe
 
     init(gap: CGFloat, size: CGSize) {
         self.size = size
-        self.gap = gap
+
+        let lowwerHeight = CGFloat.random(in: size.height * 0.3 ... size.height * 0.65)
+        let upperHeight = size.height - gap - lowwerHeight
+
+        upper = Pipe(size: CGSize(width: size.width, height: upperHeight))
+        lowwer = Pipe(size: CGSize(width: size.width, height: lowwerHeight))
         super.init()
         setup()
     }
@@ -20,17 +26,11 @@ final class CompositePipe: SKNode {
     }
 
     private func setup() {
-        let lowwerHeight = CGFloat.random(in: size.height * 0.3 ... size.height * 0.65)
-        let upperHeight = size.height - gap - lowwerHeight
-
-        let upper = Pipe(size: CGSize(width: size.width, height: upperHeight))
-        let lowwer = Pipe(size: CGSize(width: size.width, height: lowwerHeight))
-
         addChild(upper)
-        upper.position = CGPoint(x: size.width / 2, y: size.height - upperHeight / 2)
+        upper.position = CGPoint(x: size.width / 2, y: size.height - upper.size.height / 2)
 
         addChild(lowwer)
-        lowwer.position = CGPoint(x: size.width / 2, y: lowwerHeight / 2)
+        lowwer.position = CGPoint(x: size.width / 2, y: lowwer.size.height / 2)
 
         setupScore()
     }

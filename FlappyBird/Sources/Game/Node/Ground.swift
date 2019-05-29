@@ -4,7 +4,7 @@
 
 import SpriteKit
 
-final class Floor: SKShapeNode {
+final class Ground: SKShapeNode {
     var size: CGSize = .zero {
         didSet {
             updatePhysics()

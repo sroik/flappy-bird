@@ -17,16 +17,20 @@ struct QTable: Codable {
      vn: y-velocity grid size
      an: number of actions
      */
-    init(grid: Grid) {
-        self.grid = grid
-    }
-
     init(yn: Int, xn: Int, vn: Int, an: Int = BirdAction.count) {
         let actions = Array(repeating: 0, count: an)
         let velocities = Array(repeating: actions, count: vn)
         let xdists = Array(repeating: velocities, count: xn)
         let ydists = Array(repeating: xdists, count: yn)
         self.grid = ydists
+    }
+
+    init(maxState: QState = QState.maxState, an: Int = BirdAction.count) {
+        self.init(yn: maxState.yIndex, xn: maxState.xIndex, vn: maxState.vIndex, an: an)
+    }
+
+    init(grid: Grid) {
+        self.grid = grid
     }
 
     subscript(state: QState, stride: Double) -> [T] {

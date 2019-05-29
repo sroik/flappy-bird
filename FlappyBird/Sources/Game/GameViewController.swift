@@ -36,11 +36,17 @@ class GameViewController: UIViewController {
         sceneView.presentScene(gameScene)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        qdriver.run()
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         sceneView.frame = view.bounds
     }
 
+    private lazy var qdriver = QDriver(gameScene: gameScene)
     private let sceneView = SKView()
     private let gameScene = GameScene()
 }
