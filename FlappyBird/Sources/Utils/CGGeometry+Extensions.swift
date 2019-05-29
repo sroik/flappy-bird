@@ -28,14 +28,14 @@ extension CGRect {
     var center: CGPoint {
         return CGPoint(x: midX, y: midY)
     }
-    
+
     init(center: CGPoint, radius: CGFloat) {
         self.init(
             center: center,
             size: CGSize(width: 2 * radius, height: 2 * radius)
         )
     }
-    
+
     init(center: CGPoint, size: CGSize) {
         self.init(
             x: center.x - size.width / 2,

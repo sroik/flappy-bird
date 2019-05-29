@@ -16,7 +16,7 @@ extension GameState {
         case .stopped: return false
         }
     }
-    
+
     var score: Int {
         switch self {
         case let .running(score): return score

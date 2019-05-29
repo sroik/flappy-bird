@@ -5,7 +5,6 @@
 import SpriteKit
 
 final class PipeSpawner: SKNode {
-    
     init(
         idle: TimeInterval = 2.5,
         velocity: CGFloat = 0.01,
@@ -18,24 +17,24 @@ final class PipeSpawner: SKNode {
         self.gap = gap
         super.init()
     }
-    
+
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
     }
-    
+
     func stop() {
         removeAllActions()
         removeAllChildren()
     }
-    
+
     func pause() {
         speed = 0
     }
-    
+
     func unpause() {
         speed = 1
     }
-    
+
     func start(in space: CGRect) {
         self.space = space
         stop()
@@ -47,7 +46,7 @@ final class PipeSpawner: SKNode {
         let spawnThenWaitForever = SKAction.repeatForever(spawnThenWait)
         run(spawnThenWaitForever)
     }
-    
+
     func spawnPipe() {
         let pipe = CompositePipe(gap: gap, size: pipeSize)
         pipe.position = spawnPoint
@@ -55,15 +54,15 @@ final class PipeSpawner: SKNode {
         pipe.run(moveAction)
         addChild(pipe)
     }
-    
+
     private var spawnPoint: CGPoint {
         return CGPoint(x: space.width, y: 0)
     }
-    
+
     private var pipeSize: CGSize {
         return CGSize(width: width, height: space.height)
     }
-    
+
     private lazy var moveAction: SKAction = {
         let distance = CGFloat(space.width + width * 2)
         let duration = TimeInterval(velocity * distance)
@@ -71,7 +70,7 @@ final class PipeSpawner: SKNode {
         let remove = SKAction.removeFromParent()
         return SKAction.sequence([move, remove])
     }()
-    
+
     private var space: CGRect = .zero
     private let gap: CGFloat
     private let velocity: CGFloat

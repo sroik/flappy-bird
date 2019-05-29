@@ -4,7 +4,18 @@
 
 import Foundation
 
-enum BirdAction {
-    case jump
+enum BirdAction: Int, Hashable, Codable, CaseIterable {
     case none
+    case jump
+}
+
+enum BirdReward: Int {
+    case alive = 1
+    case dead = -100
+}
+
+extension BirdAction {
+    static var count: Int {
+        return BirdAction.allCases.count
+    }
 }

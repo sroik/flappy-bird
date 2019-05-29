@@ -23,6 +23,10 @@
 		ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */; };
 		ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */; };
 		ACAC34BF229D8B6500914364 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC34BE229D8B6500914364 /* GameState.swift */; };
+		ACAD29F9229E5C1A00FDB509 /* QTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29F8229E5C1A00FDB509 /* QTable.swift */; };
+		ACAD29FB229E5F8E00FDB509 /* QAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FA229E5F8E00FDB509 /* QAgent.swift */; };
+		ACAD29FD229E61F100FDB509 /* QState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FC229E61F100FDB509 /* QState.swift */; };
+		ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FE229E62EA00FDB509 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Factory.swift"; sourceTree = "<group>"; };
 		ACAC34BE229D8B6500914364 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		ACAD29F8229E5C1A00FDB509 /* QTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTable.swift; sourceTree = "<group>"; };
+		ACAD29FA229E5F8E00FDB509 /* QAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAgent.swift; sourceTree = "<group>"; };
+		ACAD29FC229E61F100FDB509 /* QState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QState.swift; sourceTree = "<group>"; };
+		ACAD29FE229E62EA00FDB509 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				AC438906229C169D0007936D /* AppDelegate.swift */,
+				ACAD29F7229E5C0300FDB509 /* QLearning */,
 				AC4B954F229D04DA002100B1 /* Game */,
 				ACA9EF17229C366300AD4991 /* Utils */,
 			);
@@ -141,8 +150,19 @@
 				ACA9EF13229C316400AD4991 /* Device.swift */,
 				ACA9EF15229C321700AD4991 /* CGGeometry+Extensions.swift */,
 				ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */,
+				ACAD29FE229E62EA00FDB509 /* Math.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		ACAD29F7229E5C0300FDB509 /* QLearning */ = {
+			isa = PBXGroup;
+			children = (
+				ACAD29F8229E5C1A00FDB509 /* QTable.swift */,
+				ACAD29FA229E5F8E00FDB509 /* QAgent.swift */,
+				ACAD29FC229E61F100FDB509 /* QState.swift */,
+			);
+			path = QLearning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC43891B229C169F0007936D /* Build configuration list for PBXNativeTarget "FlappyBird" */;
 			buildPhases = (
+				ACAD29F4229E575C00FDB509 /* Format Code */,
 				AC4388FF229C169D0007936D /* Sources */,
 				AC438900229C169D0007936D /* Frameworks */,
 				AC438901229C169D0007936D /* Resources */,
@@ -210,19 +231,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ACAD29F4229E575C00FDB509 /* Format Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Format Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "eval \"$(rbenv init -)\" && bundle exec code-formatter format\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC4388FF229C169D0007936D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAD29F9229E5C1A00FDB509 /* QTable.swift in Sources */,
 				AC4B954E229D04D6002100B1 /* Floor.swift in Sources */,
 				ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */,
 				AC43890D229C169D0007936D /* GameScene.swift in Sources */,
 				ACA9EF16229C321700AD4991 /* CGGeometry+Extensions.swift in Sources */,
 				ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */,
 				AC4B9558229D0DA7002100B1 /* PipeSpawner.swift in Sources */,
+				ACAD29FB229E5F8E00FDB509 /* QAgent.swift in Sources */,
 				AC43890F229C169D0007936D /* GameViewController.swift in Sources */,
+				ACAD29FD229E61F100FDB509 /* QState.swift in Sources */,
 				ACAC34BF229D8B6500914364 /* GameState.swift in Sources */,
+				ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */,
 				ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */,
 				AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */,
 				AC438907229C169D0007936D /* AppDelegate.swift in Sources */,

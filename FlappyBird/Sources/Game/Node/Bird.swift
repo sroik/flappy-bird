@@ -5,31 +5,30 @@
 import SpriteKit
 
 final class Bird: SKShapeNode {
-    
     static let preferredSize = CGSize(width: 30, height: 30)
-    
+
     init(size: CGSize = Bird.preferredSize) {
         self.size = size
         super.init()
         setup()
     }
-    
+
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
     }
-    
+
     func perform(action: BirdAction) {
         switch action {
         case .jump: jump()
         default: break
         }
     }
-    
+
     private func jump() {
         physicsBody?.velocity = .zero
         physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
     }
-    
+
     private func setup() {
         path = CGPath(rect: CGRect(center: .zero, size: size), transform: nil)
         blendMode = .replace
@@ -37,7 +36,7 @@ final class Bird: SKShapeNode {
         strokeColor = .clear
         setupPhysics()
     }
-    
+
     private func setupPhysics() {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.mass = 0.1
