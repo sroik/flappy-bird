@@ -48,5 +48,5 @@ class GameViewController: UIViewController {
 
     private lazy var qdriver = QDriver(gameScene: gameScene)
     private let sceneView = SKView()
-    private let gameScene = GameScene()
+    private let gameScene = GameScene(birds: (0 ... 50).map { _ in Bird() })
 }

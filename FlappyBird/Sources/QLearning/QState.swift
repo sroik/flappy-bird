@@ -13,10 +13,10 @@ struct QState {
 
 extension QState {
     static let maxState = QState(
-        velocity: 1024,
+        velocity: 2024,
         yDistance: 1024,
-        xDistance: 512,
-        stride: 10
+        xDistance: 1024,
+        stride: 20
     )
 
     var xIndex: Int {

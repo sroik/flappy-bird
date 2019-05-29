@@ -7,11 +7,18 @@ import SpriteKit
 final class Bird: SKShapeNode {
     static let preferredSize = CGSize(width: 30, height: 30)
 
+    let id: UUID
+
     var velocity: CGFloat {
         return physicsBody?.velocity.dy ?? 0
     }
 
-    init(size: CGSize = Bird.preferredSize) {
+    var isDead: Bool {
+        return physicsBody?.isDynamic == false
+    }
+
+    init(id: UUID = UUID(), size: CGSize = Bird.preferredSize) {
+        self.id = id
         self.size = size
         super.init()
         setup()
@@ -37,7 +44,7 @@ final class Bird: SKShapeNode {
         path = CGPath(rect: CGRect(center: .zero, size: size), transform: nil)
         blendMode = .replace
         fillColor = .sun
-        strokeColor = .clear
+        strokeColor = .white
         setupPhysics()
     }
 

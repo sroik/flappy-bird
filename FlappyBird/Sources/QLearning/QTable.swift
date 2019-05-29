@@ -26,14 +26,19 @@ struct QTable: Codable {
     }
 
     init(maxState: QState = QState.maxState, an: Int = BirdAction.count) {
-        self.init(yn: maxState.yIndex, xn: maxState.xIndex, vn: maxState.vIndex, an: an)
+        self.init(
+            yn: maxState.yIndex + 1,
+            xn: maxState.xIndex + 1,
+            vn: maxState.vIndex + 1,
+            an: an
+        )
     }
 
     init(grid: Grid) {
         self.grid = grid
     }
 
-    subscript(state: QState, stride: Double) -> [T] {
+    subscript(state state: QState) -> [T] {
         get {
             return self[y: state.yIndex, x: state.xIndex, v: state.vIndex]
         }
@@ -42,7 +47,7 @@ struct QTable: Codable {
         }
     }
 
-    subscript(state: QState, stride: Double, a: Int) -> T {
+    subscript(state state: QState, a a: Int) -> T {
         get {
             return self[y: state.yIndex, x: state.xIndex, v: state.vIndex, a: a]
         }

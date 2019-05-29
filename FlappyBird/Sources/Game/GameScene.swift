@@ -6,33 +6,41 @@ import SpriteKit
 
 class GameScene: SKScene {
     let pipeSpawner = PipeSpawner()
-    let bird = Bird()
+    let birds: [Bird]
+
+    init(birds: [Bird] = [Bird()]) {
+        self.birds = birds
+        super.init(size: .zero)
+    }
+
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init(birds: [])
+    }
 
     override func didMove(to view: SKView) {
         backgroundColor = .sky
+
         physicsWorld.gravity = .earthGravity
         physicsWorld.contactDelegate = self
 
-        addChild(bird)
         addChild(pipeSpawner)
-
         setupScoreLabel()
         setupGround()
-        resetBird()
+        resetBirds()
         pause()
     }
 
     func restart() {
-        resetBird()
+        resetBirds()
         updateScore()
-        bird.physicsBody?.isDynamic = true
+        birds.forEach { $0.physicsBody?.isDynamic = true }
         pipeSpawner.start(in: frame)
         state = .running(score: 0)
     }
 
     func pause() {
         pipeSpawner.pause()
-        bird.physicsBody?.isDynamic = false
+        birds.forEach { $0.physicsBody?.isDynamic = false }
     }
 
     func updateScore() {
@@ -57,20 +65,39 @@ class GameScene: SKScene {
         addChild(ceil)
     }
 
-    private func resetBird() {
-        bird.position = CGPoint(x: frame.width * 0.25, y: frame.height * 0.5)
+    private func resetBirds() {
+        birds.forEach { bird in
+            if bird.parent == nil {
+                addChild(bird)
+            }
+
+            bird.position = CGPoint(
+                x: frame.width * CGFloat.random(in: 0.25 ... 0.4),
+                y: frame.height * CGFloat.random(in: 0.4 ... 0.7)
+            )
+        }
+    }
+
+    func bird(with body1: SKPhysicsBody, or body2: SKPhysicsBody) -> Bird? {
+        return birds.first {
+            $0.physicsBody == body1 || $0.physicsBody == body2
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 
-        switch state {
-        case .stopped:
+        if state == .stopped {
             restart()
-            bird.perform(action: .jump)
-        case .running:
-            bird.perform(action: .jump)
         }
+
+        birds.forEach {
+            $0.perform(action: .jump)
+        }
+    }
+
+    private var allBirdsDead: Bool {
+        return birds.allSatisfy { $0.isDead }
     }
 
     private(set) var state: GameState = .stopped
@@ -90,8 +117,17 @@ extension GameScene: SKPhysicsContactDelegate {
             state = .running(score: state.score + 1)
             updateScore()
         case (_, _):
-            state = .stopped
-            pause()
+            guard let bird = self.bird(with: contact.bodyA, or: contact.bodyB) else {
+                return
+            }
+
+            bird.physicsBody?.isDynamic = false
+            bird.removeFromParent()
+
+            if allBirdsDead {
+                state = .stopped
+                pause()
+            }
         }
     }
 }

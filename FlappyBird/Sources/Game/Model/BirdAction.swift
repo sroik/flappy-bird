@@ -14,8 +14,18 @@ enum BirdReward: Int {
     case dead = -100
 }
 
+extension BirdReward {
+    var doubleValue: Double {
+        return Double(rawValue)
+    }
+}
+
 extension BirdAction {
     static var count: Int {
         return BirdAction.allCases.count
+    }
+
+    var doubleValue: Double {
+        return Double(rawValue)
     }
 }
