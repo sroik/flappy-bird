@@ -25,7 +25,13 @@ final class QAgent {
         let actions = q[state: state]
         let optimal = actions.max()
         let index = actions.firstIndex { $0 == optimal } ?? 0
-        return BirdAction(rawValue: index) ?? .none
+
+        guard let action = BirdAction(rawValue: index) else {
+            assertionFailure("invalid action")
+            return .none
+        }
+
+        return action
     }
 
     /* Bellman equation */

@@ -11,7 +11,7 @@ enum BirdAction: Int, Hashable, Codable, CaseIterable {
 
 enum BirdReward: Int {
     case alive = 1
-    case dead = -100
+    case dead = -1000
 }
 
 extension BirdReward {
