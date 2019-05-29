@@ -12,7 +12,7 @@ final class CompositePipe: SKNode {
     init(gap: CGFloat, size: CGSize) {
         self.size = size
 
-        let lowwerHeight = CGFloat.random(in: size.height * 0.3 ... size.height * 0.65)
+        let lowwerHeight = CGFloat.random(in: size.height * 0.35 ... size.height * 0.65)
         let upperHeight = size.height - gap - lowwerHeight
 
         upper = Pipe(size: CGSize(width: size.width, height: upperHeight))
