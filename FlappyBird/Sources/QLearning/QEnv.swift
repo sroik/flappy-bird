@@ -17,7 +17,7 @@ final class QEnv: NSObject {
 
         return QState(
             yDistance: Double(bird.frame.minY - closest.lowwer.frame.maxY),
-            xDistance: Double(closest.frame.maxX - bird.frame.minX),
+            xDistance: Double(closest.maxX - bird.frame.minX),
             stride: QState.maxState.stride
         )
     }
@@ -29,12 +29,18 @@ private extension GameScene {
     func pipe(nextTo bird: Bird) -> CompositePipe? {
         let pipes = pipeSpawner.children
             .compactMap { $0 as? CompositePipe }
-            .filter { $0.frame.maxX > bird.frame.minX }
+            .filter { $0.maxX > bird.frame.minX }
 
         let closest = pipes.min {
-            $0.lowwer.frame.maxX < $1.lowwer.frame.maxX
+            $0.maxX < $1.maxX
         }
 
         return closest
+    }
+}
+
+private extension CompositePipe {
+    var maxX: CGFloat {
+        return frame.minX + size.width
     }
 }

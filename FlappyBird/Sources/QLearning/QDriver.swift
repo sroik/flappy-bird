@@ -61,7 +61,7 @@ final class QDriver: NSObject {
     }
 
     private var completions: [PerformCallback] = []
-    private let episodesPerBackup: Int = 50
+    private let episodesPerBackup: Int = 25
     private var episode: Int = 0
     private var isRunning: Bool = false
     private let gameScene: GameScene
