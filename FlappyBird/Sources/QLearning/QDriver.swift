@@ -24,8 +24,6 @@ final class QDriver: NSObject {
     private func runNextEpisode() {
         print("EPISODE ", episode)
 
-        gameScene.speed = 2
-        gameScene.physicsWorld.speed = 2
         gameScene.restart()
         episode += 1
 
