@@ -10,13 +10,12 @@ final class QEnv: NSObject {
         super.init()
     }
 
-    func state(of bird: Bird) -> QState {
+    func state(of bird: Bird) -> QState? {
         guard let closest = gameScene.pipe(nextTo: bird) else {
-            return .maxState
+            return nil
         }
 
         return QState(
-            velocity: Double(bird.velocity),
             yDistance: Double(bird.frame.minY - closest.lowwer.frame.maxY),
             xDistance: Double(closest.maxX - bird.frame.minX),
             stride: QState.maxState.stride

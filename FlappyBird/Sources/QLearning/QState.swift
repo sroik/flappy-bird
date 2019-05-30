@@ -5,7 +5,6 @@
 import Foundation
 
 struct QState {
-    var velocity: Double
     var yDistance: Double
     var xDistance: Double
     var stride: Double
@@ -13,10 +12,9 @@ struct QState {
 
 extension QState {
     static let maxState = QState(
-        velocity: 2024,
         yDistance: 1024,
         xDistance: 1024,
-        stride: 5
+        stride: 4
     )
 
     var xIndex: Int {
@@ -28,15 +26,6 @@ extension QState {
         let clamped = (yDistance + QState.maxState.yDistance / 2).clamped(
             from: 0,
             to: QState.maxState.yDistance
-        )
-
-        return Int(ceil(clamped / stride))
-    }
-
-    var vIndex: Int {
-        let clamped = (velocity + QState.maxState.velocity / 2).clamped(
-            from: 0,
-            to: QState.maxState.velocity
         )
 
         return Int(ceil(clamped / stride))

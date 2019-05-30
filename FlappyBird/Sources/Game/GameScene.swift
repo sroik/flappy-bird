@@ -72,8 +72,8 @@ class GameScene: SKScene {
             }
 
             bird.position = CGPoint(
-                x: frame.width * CGFloat.random(in: 0.25 ... 0.35),
-                y: frame.height * CGFloat.random(in: 0.4 ... 0.7)
+                x: frame.width * CGFloat.random(in: 0.65 ... 0.85),
+                y: frame.height * CGFloat.random(in: 0.35 ... 0.75)
             )
         }
     }

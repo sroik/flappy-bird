@@ -39,17 +39,21 @@ final class QDriver: NSObject {
     }
 
     private func learn(bird: Bird) {
-        guard !bird.isDead else {
+        guard !bird.isDead, let state = env.state(of: bird) else {
             return
         }
 
-        let state = env.state(of: bird)
         let action = agent.action(for: state)
 
         perform(action: action, bird: bird) { [unowned bird, unowned self] in
+            guard let futureState = self.env.state(of: bird) else {
+                return
+            }
+
             self.agent.learn(
                 state: state,
-                futureState: self.env.state(of: bird),
+                action: action,
+                futureState: futureState,
                 reward: bird.isDead ? .dead : .alive
             )
         }
@@ -61,7 +65,7 @@ final class QDriver: NSObject {
     }
 
     private var completions: [PerformCallback] = []
-    private let episodesPerBackup: Int = 25
+    private let episodesPerBackup: Int = 100
     private var episode: Int = 0
     private var isRunning: Bool = false
     private let gameScene: GameScene

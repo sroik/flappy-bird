@@ -35,8 +35,7 @@ final class QAgent {
     }
 
     /* Bellman equation */
-    func learn(state: QState, futureState: QState, reward: BirdReward) {
-        let action = self.action(for: state)
+    func learn(state: QState, action: BirdAction, futureState: QState, reward: BirdReward) {
         let futureAction = self.action(for: futureState)
         let past = (1 - learningRate) * Double(q[state: state, a: action.rawValue])
         let learnt = learningRate * (reward.doubleValue + discount * futureAction.doubleValue)
