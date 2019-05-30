@@ -7,6 +7,10 @@ import SpriteKit
 final class Bird: SKShapeNode {
     static let preferredSize = CGSize(width: 30, height: 30)
 
+    var velocity: CGFloat {
+        return physicsBody?.velocity.dy ?? 0
+    }
+
     var isDead: Bool {
         return physicsBody?.isDynamic == false
     }
