@@ -11,10 +11,10 @@ final class PipeSpawner: SKNode {
     let width: CGFloat
 
     init(
-        idle: TimeInterval = 2,
+        idle: TimeInterval = 1.95,
         velocity: CGFloat = 125,
         width: CGFloat = 100,
-        gap: CGFloat = 150
+        gap: CGFloat = 140
     ) {
         self.width = width
         self.velocity = velocity
