@@ -30,9 +30,13 @@
 		ACAD2A01229E6BC500FDB509 /* QEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A00229E6BC500FDB509 /* QEnv.swift */; };
 		ACAD2A03229E6D3E00FDB509 /* QDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A02229E6D3E00FDB509 /* QDriver.swift */; };
 		ACD4ED4C229E84280034BA57 /* QDriver+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */; };
+		D28432114EDD90556F36F91A /* Pods_FlappyBird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E603E2874E5BBFE3CA7EE /* Pods_FlappyBird.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		137E603E2874E5BBFE3CA7EE /* Pods_FlappyBird.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlappyBird.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A33283DB1A67482D53D2E28 /* Pods-FlappyBird.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappyBird.debug.xcconfig"; path = "Target Support Files/Pods-FlappyBird/Pods-FlappyBird.debug.xcconfig"; sourceTree = "<group>"; };
+		1B12253203AECA168DBD23DE /* Pods-FlappyBird.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlappyBird.release.xcconfig"; path = "Target Support Files/Pods-FlappyBird/Pods-FlappyBird.release.xcconfig"; sourceTree = "<group>"; };
 		AC438903229C169D0007936D /* FlappyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC438906229C169D0007936D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC43890C229C169D0007936D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -65,17 +69,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28432114EDD90556F36F91A /* Pods_FlappyBird.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B2A882863541DFDDB22694 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A33283DB1A67482D53D2E28 /* Pods-FlappyBird.debug.xcconfig */,
+				1B12253203AECA168DBD23DE /* Pods-FlappyBird.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB63BD161D05ACF8F18562C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				137E603E2874E5BBFE3CA7EE /* Pods_FlappyBird.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC4388FA229C169D0007936D = {
 			isa = PBXGroup;
 			children = (
 				AC438905229C169D0007936D /* FlappyBird */,
 				AC438904229C169D0007936D /* Products */,
+				17B2A882863541DFDDB22694 /* Pods */,
+				AB63BD161D05ACF8F18562C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,10 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC43891B229C169F0007936D /* Build configuration list for PBXNativeTarget "FlappyBird" */;
 			buildPhases = (
+				EEE1271A397AE6FE1335946D /* [CP] Check Pods Manifest.lock */,
 				ACAD29F4229E575C00FDB509 /* Format Code */,
 				AC4388FF229C169D0007936D /* Sources */,
 				AC438900229C169D0007936D /* Frameworks */,
 				AC438901229C169D0007936D /* Resources */,
+				EA11AFAA129068B061C6AAF4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +285,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "eval \"$(rbenv init -)\" && bundle exec code-formatter format\n";
+		};
+		EA11AFAA129068B061C6AAF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlappyBird/Pods-FlappyBird-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlappyBird/Pods-FlappyBird-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlappyBird/Pods-FlappyBird-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEE1271A397AE6FE1335946D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlappyBird-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -411,6 +477,7 @@
 		};
 		AC43891C229C169F0007936D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A33283DB1A67482D53D2E28 /* Pods-FlappyBird.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -431,6 +498,7 @@
 		};
 		AC43891D229C169F0007936D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B12253203AECA168DBD23DE /* Pods-FlappyBird.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

@@ -5,14 +5,17 @@
 import SpriteKit
 
 final class Bird: SKShapeNode {
-    static let preferredSize = CGSize(width: 30, height: 30)
+    static let preferredSize = CGSize(width: 25, height: 25)
+
+    let id: UUID
 
     var isDead: Bool {
         return physicsBody?.isDynamic == false
     }
 
-    init(size: CGSize = Bird.preferredSize) {
+    init(id: UUID = UUID(), size: CGSize = Bird.preferredSize) {
         self.size = size
+        self.id = id
         super.init()
         setup()
     }
