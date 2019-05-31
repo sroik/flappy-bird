@@ -5,6 +5,11 @@
 import SpriteKit
 
 final class PipeSpawner: SKNode {
+    let gap: CGFloat
+    let velocity: CGFloat
+    let idle: TimeInterval
+    let width: CGFloat
+
     init(
         idle: TimeInterval = 2,
         velocity: CGFloat = 125,
@@ -74,8 +79,4 @@ final class PipeSpawner: SKNode {
 
     private var moveAction: SKAction = SKAction()
     private var space: CGRect = .zero
-    private let gap: CGFloat
-    private let velocity: CGFloat
-    private let idle: TimeInterval
-    private let width: CGFloat
 }

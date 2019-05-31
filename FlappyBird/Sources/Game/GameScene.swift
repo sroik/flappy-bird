@@ -4,7 +4,12 @@
 
 import SpriteKit
 
+protocol GameSceneObserver: AnyObject {
+    func gameScene(_ scene: GameScene, birdDidDie bird: Bird)
+}
+
 class GameScene: SKScene {
+    weak var observer: GameSceneObserver?
     let pipeSpawner = PipeSpawner()
     let birds: [Bird]
 
@@ -26,12 +31,12 @@ class GameScene: SKScene {
         addChild(pipeSpawner)
         setupScoreLabel()
         setupGround()
-        resetBirds()
+        spawnBirds()
         pause()
     }
 
     func restart() {
-        resetBirds()
+        spawnBirds()
         updateScore()
         birds.forEach { $0.physicsBody?.isDynamic = true }
         pipeSpawner.start(in: frame)
@@ -65,14 +70,14 @@ class GameScene: SKScene {
         addChild(ceil)
     }
 
-    private func resetBirds() {
+    private func spawnBirds() {
         birds.forEach { bird in
             if bird.parent == nil {
                 addChild(bird)
             }
 
             bird.position = CGPoint(
-                x: frame.width * CGFloat.random(in: 0.65 ... 0.85),
+                x: frame.width * CGFloat.random(in: 0.35 ... 0.45),
                 y: frame.height * CGFloat.random(in: 0.35 ... 0.75)
             )
         }
@@ -97,7 +102,7 @@ class GameScene: SKScene {
     }
 
     private var allBirdsDead: Bool {
-        return birds.allSatisfy { $0.isDead }
+        return birds.allSatisfy { $0.parent == nil }
     }
 
     private(set) var state: GameState = .stopped
@@ -123,6 +128,7 @@ extension GameScene: SKPhysicsContactDelegate {
 
             bird.physicsBody?.isDynamic = false
             bird.removeFromParent()
+            observer?.gameScene(self, birdDidDie: bird)
 
             if allBirdsDead {
                 state = .stopped

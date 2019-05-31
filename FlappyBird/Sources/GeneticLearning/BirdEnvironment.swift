@@ -4,21 +4,21 @@
 
 import SpriteKit
 
-final class QEnv: NSObject {
+final class BirdEnvironment: NSObject {
     init(gameScene: GameScene) {
         self.gameScene = gameScene
         super.init()
     }
 
-    func state(of bird: Bird) -> QState? {
+    func state(of bird: Bird) -> BirdState? {
         guard let closest = gameScene.pipe(nextTo: bird) else {
             return nil
         }
 
-        return QState(
+        return BirdState(
             yDistance: Double(bird.frame.minY - closest.lowwer.frame.maxY),
             xDistance: Double(closest.maxX - bird.frame.minX),
-            stride: QState.maxState.stride
+            gap: Double(gameScene.pipeSpawner.gap)
         )
     }
 
@@ -36,6 +36,12 @@ private extension GameScene {
         }
 
         return closest
+    }
+}
+
+private extension Bird {
+    var velocity: Double {
+        return Double(physicsBody?.velocity.dy ?? 0)
     }
 }
 

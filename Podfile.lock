@@ -1,5 +1,5 @@
 PODS:
-  - SmartMachine (0.2.1):
+  - SmartMachine (0.2.3):
     - Surge (~> 2.2.0)
   - Surge (2.2.0)
 
@@ -12,7 +12,7 @@ SPEC REPOS:
     - Surge
 
 SPEC CHECKSUMS:
-  SmartMachine: f847ec758d874255f2e28c411ac8c3a16c8fe296
+  SmartMachine: 070d330e2830977b1ec44d4614cc60311b9bcce2
   Surge: 51fbaf8020dc2bc6416c07ed540f21536ba5a98b
 
 PODFILE CHECKSUM: b8969969426eb6b1c756b3dff71144ac456f514a

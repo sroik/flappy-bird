@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,13 +23,11 @@
 		ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */; };
 		ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */; };
 		ACAC34BF229D8B6500914364 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC34BE229D8B6500914364 /* GameState.swift */; };
-		ACAD29F9229E5C1A00FDB509 /* QTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29F8229E5C1A00FDB509 /* QTable.swift */; };
-		ACAD29FB229E5F8E00FDB509 /* QAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FA229E5F8E00FDB509 /* QAgent.swift */; };
-		ACAD29FD229E61F100FDB509 /* QState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FC229E61F100FDB509 /* QState.swift */; };
+		ACAD29FB229E5F8E00FDB509 /* BirdAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FA229E5F8E00FDB509 /* BirdAgent.swift */; };
+		ACAD29FD229E61F100FDB509 /* BirdState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FC229E61F100FDB509 /* BirdState.swift */; };
 		ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD29FE229E62EA00FDB509 /* Math.swift */; };
-		ACAD2A01229E6BC500FDB509 /* QEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A00229E6BC500FDB509 /* QEnv.swift */; };
-		ACAD2A03229E6D3E00FDB509 /* QDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A02229E6D3E00FDB509 /* QDriver.swift */; };
-		ACD4ED4C229E84280034BA57 /* QDriver+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */; };
+		ACAD2A01229E6BC500FDB509 /* BirdEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A00229E6BC500FDB509 /* BirdEnvironment.swift */; };
+		ACAD2A03229E6D3E00FDB509 /* GeneticEvolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAD2A02229E6D3E00FDB509 /* GeneticEvolver.swift */; };
 		D28432114EDD90556F36F91A /* Pods_FlappyBird.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E603E2874E5BBFE3CA7EE /* Pods_FlappyBird.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,13 +53,11 @@
 		ACA9EF18229C3B3A00AD4991 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		ACA9EF1A229C3B7400AD4991 /* UIColor+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Factory.swift"; sourceTree = "<group>"; };
 		ACAC34BE229D8B6500914364 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		ACAD29F8229E5C1A00FDB509 /* QTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTable.swift; sourceTree = "<group>"; };
-		ACAD29FA229E5F8E00FDB509 /* QAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAgent.swift; sourceTree = "<group>"; };
-		ACAD29FC229E61F100FDB509 /* QState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QState.swift; sourceTree = "<group>"; };
+		ACAD29FA229E5F8E00FDB509 /* BirdAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdAgent.swift; sourceTree = "<group>"; };
+		ACAD29FC229E61F100FDB509 /* BirdState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdState.swift; sourceTree = "<group>"; };
 		ACAD29FE229E62EA00FDB509 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		ACAD2A00229E6BC500FDB509 /* QEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QEnv.swift; sourceTree = "<group>"; };
-		ACAD2A02229E6D3E00FDB509 /* QDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QDriver.swift; sourceTree = "<group>"; };
-		ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QDriver+Storage.swift"; sourceTree = "<group>"; };
+		ACAD2A00229E6BC500FDB509 /* BirdEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdEnvironment.swift; sourceTree = "<group>"; };
+		ACAD2A02229E6D3E00FDB509 /* GeneticEvolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticEvolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +78,6 @@
 				1A33283DB1A67482D53D2E28 /* Pods-FlappyBird.debug.xcconfig */,
 				1B12253203AECA168DBD23DE /* Pods-FlappyBird.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -168,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				AC438906229C169D0007936D /* AppDelegate.swift */,
-				ACAD29F7229E5C0300FDB509 /* QLearning */,
+				ACAD29F7229E5C0300FDB509 /* GeneticLearning */,
 				AC4B954F229D04DA002100B1 /* Game */,
 				ACA9EF17229C366300AD4991 /* Utils */,
 			);
@@ -186,17 +181,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		ACAD29F7229E5C0300FDB509 /* QLearning */ = {
+		ACAD29F7229E5C0300FDB509 /* GeneticLearning */ = {
 			isa = PBXGroup;
 			children = (
-				ACAD29F8229E5C1A00FDB509 /* QTable.swift */,
-				ACAD29FA229E5F8E00FDB509 /* QAgent.swift */,
-				ACAD29FC229E61F100FDB509 /* QState.swift */,
-				ACAD2A00229E6BC500FDB509 /* QEnv.swift */,
-				ACAD2A02229E6D3E00FDB509 /* QDriver.swift */,
-				ACD4ED4B229E84280034BA57 /* QDriver+Storage.swift */,
+				ACAD29FA229E5F8E00FDB509 /* BirdAgent.swift */,
+				ACAD29FC229E61F100FDB509 /* BirdState.swift */,
+				ACAD2A00229E6BC500FDB509 /* BirdEnvironment.swift */,
+				ACAD2A02229E6D3E00FDB509 /* GeneticEvolver.swift */,
 			);
-			path = QLearning;
+			path = GeneticLearning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,23 +325,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACAD29F9229E5C1A00FDB509 /* QTable.swift in Sources */,
-				ACAD2A03229E6D3E00FDB509 /* QDriver.swift in Sources */,
+				ACAD2A03229E6D3E00FDB509 /* GeneticEvolver.swift in Sources */,
 				AC4B954E229D04D6002100B1 /* Ground.swift in Sources */,
 				ACA9EF1B229C3B7400AD4991 /* UIColor+Factory.swift in Sources */,
-				ACAD2A01229E6BC500FDB509 /* QEnv.swift in Sources */,
+				ACAD2A01229E6BC500FDB509 /* BirdEnvironment.swift in Sources */,
 				AC43890D229C169D0007936D /* GameScene.swift in Sources */,
 				ACA9EF16229C321700AD4991 /* CGGeometry+Extensions.swift in Sources */,
 				ACA9EF19229C3B3A00AD4991 /* CollisionCategory.swift in Sources */,
 				AC4B9558229D0DA7002100B1 /* PipeSpawner.swift in Sources */,
-				ACAD29FB229E5F8E00FDB509 /* QAgent.swift in Sources */,
+				ACAD29FB229E5F8E00FDB509 /* BirdAgent.swift in Sources */,
 				AC43890F229C169D0007936D /* GameViewController.swift in Sources */,
-				ACAD29FD229E61F100FDB509 /* QState.swift in Sources */,
+				ACAD29FD229E61F100FDB509 /* BirdState.swift in Sources */,
 				ACAC34BF229D8B6500914364 /* GameState.swift in Sources */,
 				ACAD29FF229E62EA00FDB509 /* Math.swift in Sources */,
 				ACA9EF12229C30CA00AD4991 /* Bird.swift in Sources */,
 				AC4B9556229D0BC8002100B1 /* CompositePipe.swift in Sources */,
-				ACD4ED4C229E84280034BA57 /* QDriver+Storage.swift in Sources */,
 				AC438907229C169D0007936D /* AppDelegate.swift in Sources */,
 				AC4B9552229D0850002100B1 /* BirdAction.swift in Sources */,
 				ACA9EF14229C316400AD4991 /* Device.swift in Sources */,

@@ -4,18 +4,20 @@
 
 import SpriteKit
 
+typealias BirdIdentifier = String
+
 final class Bird: SKShapeNode {
     static let preferredSize = CGSize(width: 25, height: 25)
 
-    let id: UUID
+    let identifier: BirdIdentifier
+    let size: CGSize
 
-    var isDead: Bool {
-        return physicsBody?.isDynamic == false
-    }
-
-    init(id: UUID = UUID(), size: CGSize = Bird.preferredSize) {
+    init(
+        identifier: BirdIdentifier = UUID().uuidString,
+        size: CGSize = Bird.preferredSize
+    ) {
         self.size = size
-        self.id = id
+        self.identifier = identifier
         super.init()
         setup()
     }
@@ -54,6 +56,4 @@ final class Bird: SKShapeNode {
         physicsBody?.collisionBitMask = CollisionCategory.birdCollision.rawValue
         physicsBody?.contactTestBitMask = CollisionCategory.birdContact.rawValue
     }
-
-    private let size: CGSize
 }

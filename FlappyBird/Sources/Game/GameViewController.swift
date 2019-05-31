@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        qdriver.run()
+        evolver.run()
     }
 
     override func viewDidLayoutSubviews() {
@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
         sceneView.frame = view.bounds
     }
 
-    private lazy var qdriver = QDriver(gameScene: gameScene)
+    private lazy var evolver = GeneticEvolver(gameScene: gameScene)
     private let sceneView = SKView()
-    private let gameScene = GameScene(birds: (0 ... 75).map { _ in Bird() })
+    private let gameScene = GameScene(birds: (0 ..< 64).map { _ in Bird() })
 }
